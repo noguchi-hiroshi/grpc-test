@@ -8,6 +8,7 @@ import (
 
 type Client interface {
 	Greet(nickname string) error
+	Bench()
 }
 
 type client struct {
@@ -26,4 +27,9 @@ func (c *client) Greet(nickname string) error {
 	}
 	fmt.Println(res.Message)
 	return nil
+}
+
+func (c *client) Bench() {
+	ctx := context.Background()
+	c.sc.Greet(ctx, &pb.Request{Nickname: ""})
 }

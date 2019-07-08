@@ -15,7 +15,15 @@ func main() {
 	defer conn.Close()
 	sc := pb.NewSimpleClient(conn)
 	client := simple.NewClient(sc)
-	if err := client.Greet("Hoge"); err != nil {
+	bench(client)
+}
+
+func bench(c simple.Client) {
+	c.Bench()
+}
+
+func greet(c simple.Client) {
+	if err := c.Greet("Hoge"); err != nil {
 		log.Fatalln(err)
 	}
 }
