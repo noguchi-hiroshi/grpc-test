@@ -3,3 +3,7 @@
 
 # osx
 .DS_Store
+
+# build
+cmd/simple/client/client
+cmd/simple/server/server
