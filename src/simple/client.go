@@ -7,7 +7,7 @@ import (
 )
 
 type Client interface {
-	Greet(nickname string) error
+	Greet() error
 	Bench()
 }
 
@@ -19,9 +19,9 @@ func NewClient(sc pb.SimpleClient) Client {
 	return &client{sc: sc}
 }
 
-func (c *client) Greet(nickname string) error {
+func (c *client) Greet() error {
 	ctx := context.Background()
-	res, err := c.sc.Greet(ctx, &pb.Request{Nickname: nickname})
+	res, err := c.sc.Greet(ctx, &pb.Request{})
 	if err != nil {
 		return err
 	}
@@ -31,5 +31,5 @@ func (c *client) Greet(nickname string) error {
 
 func (c *client) Bench() {
 	ctx := context.Background()
-	c.sc.Greet(ctx, &pb.Request{Nickname: ""})
+	c.sc.Greet(ctx, &pb.Request{})
 }

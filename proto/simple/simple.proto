@@ -5,7 +5,6 @@ service Simple {
 }
 
 message Request {
-    string nickname = 1;
 }
 
 message Response {

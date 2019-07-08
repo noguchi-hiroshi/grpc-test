@@ -23,7 +23,7 @@ func bench(c simple.Client) {
 }
 
 func greet(c simple.Client) {
-	if err := c.Greet("Hoge"); err != nil {
+	if err := c.Greet(); err != nil {
 		log.Fatalln(err)
 	}
 }
