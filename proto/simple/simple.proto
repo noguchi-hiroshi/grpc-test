@@ -1,0 +1,13 @@
+syntax="proto3";
+
+service Simple {
+    rpc Greet(Request) returns (Response) {}
+}
+
+message Request {
+    string nickname = 1;
+}
+
+message Response {
+    string message = 1;
+}
