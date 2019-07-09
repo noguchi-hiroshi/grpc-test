@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
 	pb "github.com/noguchi-hiroshi/grpc-test/proto/simple"
-	"github.com/noguchi-hiroshi/grpc-test/src/simple"
+	"github.com/noguchi-hiroshi/grpc-test/simple"
 	"google.golang.org/grpc"
 	"log"
+	"time"
 )
 
 func main() {
@@ -19,7 +21,11 @@ func main() {
 }
 
 func bench(c simple.Client) {
-	c.Bench()
+	start := time.Now()
+	for i := 0; i < 1000; i++ {
+		c.Bench()
+	}
+	fmt.Println(time.Since(start))
 }
 
 func greet(c simple.Client) {

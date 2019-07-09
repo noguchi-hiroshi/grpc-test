@@ -2,7 +2,7 @@ package main
 
 import (
 	pb "github.com/noguchi-hiroshi/grpc-test/proto/simple"
-	"github.com/noguchi-hiroshi/grpc-test/src/simple"
+	"github.com/noguchi-hiroshi/grpc-test/simple"
 	"google.golang.org/grpc"
 	"log"
 	"net"

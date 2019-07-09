@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/noguchi-hiroshi/grpc-test/src/rest"
+	"github.com/noguchi-hiroshi/grpc-test/rest"
 	"net/http"
 )
 
