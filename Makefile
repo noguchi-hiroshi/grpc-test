@@ -28,5 +28,16 @@ rest-bench:
 	@cd ./cmd/rest/client && time seq 100 | xargs -n 1 ./client
 	@cd ./cmd/rest/client && time seq 300 | xargs -n 1 ./client
 
+serverstream-server:
+	@cd ./cmd/serverstream/server && ./server
+
+serverstream-client:
+	@cd ./cmd/serverstream/client && ./client
+
+serverstream-build:
+	@cd ./cmd/serverstream/server && go build .
+	@cd ./cmd/serverstream/client && go build .
+
 prot:
-	@protoc --go_out=plugins=grpc:. ./proto/*/*.proto
+	@protoc --go_out=plugins=grpc:. ./proto/simple/*.proto
+	@protoc --go_out=plugins=grpc:. ./proto/serverstream/*.proto
