@@ -1,8 +1,8 @@
 package main
 
 import (
-	pb "github.com/noguchi-hiroshi/grpc-test/proto/clientstream"
 	"github.com/noguchi-hiroshi/grpc-test/clientstream"
+	pb "github.com/noguchi-hiroshi/grpc-test/proto/clientstream"
 	"google.golang.org/grpc"
 	"log"
 )

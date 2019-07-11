@@ -1,0 +1,14 @@
+syntax="proto3";
+
+service BiStream {
+    rpc Greet(stream Request) returns (stream Response) {}
+}
+
+message Request {
+    string message = 1;
+    bool finished = 2;
+}
+
+message Response {
+    string message = 1;
+}

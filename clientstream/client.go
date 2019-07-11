@@ -22,7 +22,9 @@ func NewClient(sc pb.ClientStreamClient) Client {
 func (c *client) Greet() error {
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
+
 	stream, err := c.sc.Greet(ctx)
+
 	if err != nil {
 		return err
 	}
