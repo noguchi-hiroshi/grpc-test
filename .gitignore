@@ -5,6 +5,9 @@
 .DS_Store
 
 # build
+cmd/clientstream/client/client
+cmd/clientstream/server/server
+
 cmd/serverstream/client/client
 cmd/serverstream/server/server
 
