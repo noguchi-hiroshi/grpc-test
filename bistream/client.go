@@ -48,7 +48,7 @@ func (c *client) Greet() error {
 	return err
 }
 
-func (c *client) recv (stream pb.BiStream_GreetClient, done chan struct{}) {
+func (c *client) recv(stream pb.BiStream_GreetClient, done chan struct{}) {
 	defer close(done)
 	for {
 		res, err := stream.Recv()
