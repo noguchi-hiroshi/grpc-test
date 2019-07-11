@@ -1,0 +1,13 @@
+syntax="proto3";
+
+service ClientStream {
+    rpc Greet(stream Request) returns (Response) {}
+}
+
+message Request {
+    int32 num = 1;
+}
+
+message Response {
+    string message = 1;
+}

@@ -37,7 +37,18 @@ serverstream-client:
 serverstream-build:
 	@cd ./cmd/serverstream/server && go build .
 	@cd ./cmd/serverstream/client && go build .
+	
+clientstream-server:
+	@cd ./cmd/clientstream/server && ./server
+
+clientstream-client:
+	@cd ./cmd/clientstream/client && ./client
+
+clientstream-build:
+	@cd ./cmd/clientstream/server && go build .
+	@cd ./cmd/clientstream/client && go build .
 
 prot:
 	@protoc --go_out=plugins=grpc:. ./proto/simple/*.proto
 	@protoc --go_out=plugins=grpc:. ./proto/serverstream/*.proto
+	@protoc --go_out=plugins=grpc:. ./proto/clientstream/*.proto
