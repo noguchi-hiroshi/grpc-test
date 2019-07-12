@@ -17,12 +17,19 @@ func main() {
 	defer conn.Close()
 	sc := pb.NewSimpleClient(conn)
 	client := simple.NewClient(sc)
-	bench(client)
+	bench(client, 10)
+	bench(client, 100)
+	bench(client, 300)
+	bench(client, 500)
+	bench(client, 1000)
+	bench(client, 3000)
+	bench(client, 5000)
+	bench(client, 10000)
 }
 
-func bench(c simple.Client) {
+func bench(c simple.Client, max int) {
 	start := time.Now()
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < max; i++ {
 		c.Bench()
 	}
 	fmt.Println(time.Since(start))
